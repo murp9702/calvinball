@@ -1,29 +1,20 @@
 /*
-            Calvinball (http://www.picpak.net/calvin/oldsite/images/oogy.gif) is a game with a very complicated scoring system. Your job is to write a piece of code which determines a player's final score, given their starting scrore, and various other details about the player which are relevant to the game. 
+            Calvinball (http://www.picpak.net/calvin/oldsite/images/oogy.gif) is a game with a very complicated scoring system. Your job is to write a piece of code which determines a player's final score, given their starting scrore, and various other details about the player which are relevant to the game.
 
             Provided below are three different player's starting scores. Uncomment one at a time to calculate the final score for that player.
-
-            Calvinball Rules:
-               
-
-                
-               
-               
-                
-              
         */
 
-        /*
-        //Player One score = 166		
+				/*
+        //Player One score = 332
         var score = 193;
         var last_play = "Q";
         var broom = "handle";
         var has_ball = false;
         var is_in_tree = false;
         var crying = false;
-		*/
+				*/
 
-        /*
+				/*
         //Player Two score = 419.5
         var score = 394;
         var last_play = "W";
@@ -31,9 +22,9 @@
         var has_ball = true;
         var is_in_tree = true;
         var crying = false;
-        */
+				*/
 
-        /*
+
         //Player Three score = 150
         var score = "f";
         var last_play = 1.5;
@@ -41,10 +32,10 @@
         var has_ball = true;
         var is_in_tree = false;
         var crying = true;
-        */
 
 
- //1. A player's score is equal to 500 if their score is not already a number. (this is implemented below).
+//Calvinball Rules:
+//1. A player's score is equal to 500 if their score is not already a number. (this is implemented below).
 
 function checkScore() {
 	if (isNaN(score)) {
@@ -82,7 +73,7 @@ function hasBroom() {
 	if (broom === "handle") {
 		score = score * 2;
 	}
-	if (broom === "broom") {
+	else if (broom === "brush") {
 		score = score * 3;
 	} else {
 		score = score / 2;
@@ -114,10 +105,8 @@ function calculateScore() {
          tree();
          hasBroom();
          ballCarry();
-         notANumber(); 
+         notANumber();
+				 console.log(score);
 }
 
 calculateScore();
-
-console.log(score);
-
