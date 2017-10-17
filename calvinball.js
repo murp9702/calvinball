@@ -25,7 +25,7 @@
 				*/
 
 
-        //Player Three score = 150
+        //Player Three score = 900
         var score = "f";
         var last_play = 1.5;
         var broom = "brush";
@@ -45,7 +45,7 @@ function checkScore() {
 
 // 2. A player's score is reduced by 300 if they are crying. Otherwise it is increased by 50.
 function isCrying() {
-	if (crying === true) {
+	if (crying) {
 		score += -300;
 	} else {
 		score += 50;
@@ -75,7 +75,8 @@ function hasBroom() {
 	}
 	else if (broom === "brush") {
 		score = score * 3;
-	} else {
+	}
+	else if (broom === "none") {
 		score = score / 2;
 	}
 }
@@ -84,12 +85,21 @@ function hasBroom() {
 function ballCarry() {
 	if (crying === false) {
 		if (is_in_tree === false) {
-			if(has_ball === true) {
+			if(has_ball) {
 				score = score *1.5;
 			}
 		}
 	}
 }
+
+function cryingCheck() {
+	if (crying === false) {
+		ballCarry();
+	} else {
+
+	}
+}
+
 
 //  7. If the player's last play was a number (not a letter), the player's score is multiplied by that amount.
 function notANumber() {
